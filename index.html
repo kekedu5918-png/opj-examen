@@ -510,17 +510,32 @@ input{font:inherit;color:var(--txt);}
 .learn-lessons-view.on{display:block;}
 .learn-lessons-card{margin:0 16px 24px;background:var(--card);border-radius:24px;overflow:hidden;box-shadow:0 6px 28px rgba(0,0,0,.12);border:1px solid var(--brd);}
 .learn-lessons-card .learn-hero{border-radius:24px 24px 0 0;}
-.learn-fiches-section{padding:20px 16px 28px;}
-.learn-fiches-title{font-family:var(--ff);font-size:1rem;font-weight:900;color:var(--txt);margin-bottom:6px;padding:0 4px;}
-.learn-fiches-sub{font-size:.82rem;color:var(--txt2);line-height:1.5;margin-bottom:18px;padding:0 4px;}
-.section-bubble.sb-hero{grid-column:1/-1;min-height:200px;padding:28px 24px;border-width:2px;border-color:rgba(0,48,135,.3);background:linear-gradient(145deg,var(--card) 0%,rgba(0,48,135,.06) 50%,rgba(240,165,0,.04) 100%);box-shadow:0 6px 28px rgba(0,48,135,.15),0 0 0 1px rgba(240,165,0,.12);position:relative;}
-.section-bubble.sb-hero::before{content:'Recommandé en premier';position:absolute;top:12px;right:14px;font-size:.6rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--or-dark);background:linear-gradient(135deg,rgba(240,165,0,.25),rgba(240,165,0,.12));padding:6px 12px;border-radius:999px;border:1px solid rgba(240,165,0,.35);}
-.section-bubble.sb-hero .sb-ico{font-size:3.2rem;margin-bottom:14px;}
-.section-bubble.sb-hero .sb-name{font-size:1.2rem;margin-bottom:6px;}
-.section-bubble.sb-hero .sb-sub{font-size:.85rem;}
-.section-bubble.sb-hero .sb-cta{display:inline-block;margin-top:14px;padding:10px 20px;font-size:.8rem;font-weight:800;border-radius:12px;background:linear-gradient(135deg,var(--or),var(--or-dark));color:#0D1B2A;box-shadow:0 4px 16px rgba(240,165,0,.3);transition:transform .2s,box-shadow .2s;}
-.section-bubble.sb-hero .sb-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(240,165,0,.4);}
-.section-bubble.sb-hero:hover{border-color:var(--bleu);box-shadow:0 8px 32px rgba(0,48,135,.2),0 0 0 1px rgba(240,165,0,.2);}
+.learn-fiches-section{background:linear-gradient(180deg, rgba(0,48,135,.03) 0%, transparent 35%);padding:24px 16px 32px;min-height:100%;}
+.learn-page-hero{text-align:center;margin-bottom:28px;padding:0 8px;}
+.learn-fiches-title{font-family:var(--ff);font-size:1.5rem;font-weight:900;color:var(--txt);margin:0 0 8px 0;letter-spacing:-.02em;}
+.learn-fiches-title .learn-title-accent{color:var(--bleu);}
+.learn-fiches-sub{font-size:.9rem;color:var(--txt2);line-height:1.55;margin:0;max-width:320px;margin-left:auto;margin-right:auto;}
+.learn-grid-inner{display:flex;flex-direction:column;gap:28px;grid-column:1/-1;}
+.learn-hero-wrap{width:100%;}
+.learn-group{margin:0;}
+.learn-group-title{font-size:.7rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--txt2);margin-bottom:14px;padding:0 4px;display:flex;align-items:center;gap:10px;}
+.learn-group-title .lg-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.learn-group:nth-child(2) .lg-dot{background:var(--bleu);}
+.learn-group:nth-child(3) .lg-dot{background:#8b5cf6;}
+.learn-group:nth-child(4) .lg-dot{background:var(--or);}
+.learn-group:nth-child(5) .lg-dot{background:var(--vert);}
+.learn-group-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--brd2),transparent);}
+.learn-group-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;width:100%;max-width:600px;margin:0 auto;}
+@media(min-width:420px){.learn-group-grid{grid-template-columns:repeat(3,1fr);gap:16px;}}
+.section-bubble.sb-hero{grid-column:1/-1;min-height:220px;padding:32px 26px;border-radius:20px;border:2px solid rgba(0,48,135,.25);background:linear-gradient(155deg, #fff 0%, rgba(0,48,135,.04) 40%, rgba(240,165,0,.06) 100%);box-shadow:0 8px 32px rgba(0,48,135,.12),0 0 0 1px rgba(255,255,255,.6) inset;position:relative;overflow:hidden;}
+.section-bubble.sb-hero::before{content:'';position:absolute;top:0;right:0;width:140px;height:140px;background:radial-gradient(circle at 100% 0%, rgba(0,48,135,.08) 0%, transparent 70%);pointer-events:none;}
+.section-bubble.sb-hero::after{content:'Par où commencer';position:absolute;top:16px;right:16px;font-size:.6rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--bleu);background:rgba(0,48,135,.08);padding:6px 12px;border-radius:999px;border:1px solid rgba(0,48,135,.15);}
+.section-bubble.sb-hero .sb-ico{font-size:3.4rem;margin-bottom:12px;filter:drop-shadow(0 2px 8px rgba(0,48,135,.15));}
+.section-bubble.sb-hero .sb-name{font-size:1.35rem;font-weight:900;color:var(--bleu);margin-bottom:6px;letter-spacing:-.01em;}
+.section-bubble.sb-hero .sb-sub{font-size:.88rem;color:var(--txt2);line-height:1.45;}
+.section-bubble.sb-hero .sb-cta{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:14px 24px;font-size:.88rem;font-weight:800;border-radius:14px;background:linear-gradient(135deg,var(--or),var(--or-dark));color:#0D1B2A;border:none;box-shadow:0 6px 20px rgba(240,165,0,.35);transition:transform .2s,box-shadow .2s;cursor:pointer;}
+.section-bubble.sb-hero .sb-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(240,165,0,.45);}
+.section-bubble.sb-hero:hover{border-color:rgba(0,48,135,.4);box-shadow:0 12px 40px rgba(0,48,135,.15),0 0 0 1px rgba(255,255,255,.6) inset;}
 .lh-title{font-family:var(--ff);font-size:1.45rem;font-weight:900;color:#fff;margin-bottom:6px;letter-spacing:.02em;text-shadow:0 1px 4px rgba(0,0,0,.15);}
 .lh-sub{font-size:.8rem;color:rgba(255,255,255,.85);margin-bottom:16px;line-height:1.4;}
 .lh-prog-row{display:flex;justify-content:space-between;align-items:center;font-size:.7rem;font-weight:800;color:rgba(255,255,255,.9);margin-bottom:8px;}
@@ -669,14 +684,16 @@ input{font:inherit;color:var(--txt);}
 .section-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;width:100%;max-width:600px;margin:0 auto;}
 @media(min-width:500px){.section-grid{grid-template-columns:repeat(3,1fr);gap:20px;}}
 @media(min-width:768px){.section-grid{grid-template-columns:repeat(4,1fr);gap:24px;}}
-.section-bubble{position:relative;background:var(--card);border:1px solid var(--brd2);border-radius:24px;padding:20px;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.15);transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .2s;overflow:hidden;}
-.section-bubble:hover{transform:scale(1.04);box-shadow:0 8px 28px rgba(0,0,0,.2),0 0 0 1px rgba(240,165,0,.15);border-color:rgba(240,165,0,.3);}
-.section-bubble:active{transform:scale(0.97);transition-duration:.1s;}
-.section-bubble .sb-ico{font-size:2.5rem;line-height:1;margin-bottom:10px;}
-.section-bubble .sb-name{font-family:var(--ff);font-size:.9rem;font-weight:800;color:var(--txt);margin-bottom:4px;}
-.section-bubble .sb-sub{font-size:.7rem;color:var(--txt3);margin-bottom:12px;}
-.section-bubble .sb-prog-wrap{width:100%;height:6px;background:var(--bg3);border-radius:999px;overflow:hidden;}
+.section-bubble{position:relative;background:var(--card);border:1px solid var(--brd2);border-radius:20px;padding:22px 18px;min-height:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.08);transition:transform .22s var(--ease),box-shadow .22s var(--ease),border-color .2s;overflow:hidden;}
+.section-bubble:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.12),0 0 0 1px rgba(0,48,135,.12);border-color:rgba(0,48,135,.2);}
+.section-bubble:active{transform:translateY(0);transition-duration:.1s;}
+.section-bubble .sb-ico{font-size:2.4rem;line-height:1;margin-bottom:10px;width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:var(--bg2);border:1px solid var(--brd2);}
+.section-bubble .sb-name{font-family:var(--ff);font-size:.88rem;font-weight:800;color:var(--txt);margin-bottom:4px;line-height:1.3;}
+.section-bubble .sb-sub{font-size:.7rem;color:var(--txt3);margin-bottom:10px;line-height:1.4;}
+.section-bubble .sb-prog-wrap{width:100%;height:5px;background:var(--bg3);border-radius:999px;overflow:hidden;}
 .section-bubble .sb-prog-fill{height:100%;border-radius:999px;transition:width .5s var(--ease);}
+#learn-grid .section-bubble .sb-ico{background:linear-gradient(145deg, rgba(0,48,135,.06), rgba(0,48,135,.02));border-color:rgba(0,48,135,.12);}
+#learn-grid .section-bubble:hover .sb-ico{background:linear-gradient(145deg, rgba(0,48,135,.1), rgba(0,48,135,.04));border-color:rgba(0,48,135,.2);}
 .fich-section-content-wrap{display:none;padding:0 0 28px;}
 .fich-section-content-wrap.on{display:block;}
 .fich-back-bar{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--card);border-bottom:1px solid var(--brd);margin-bottom:0;}
@@ -1436,8 +1453,10 @@ input{font:inherit;color:var(--txt);}
 <div class="screen" id="scr-learn">
   <div class="learn-bubbles-wrap on" id="learn-bubbles-wrap">
     <div class="learn-fiches-section">
-      <div class="learn-fiches-title">Apprendre</div>
-      <p class="learn-fiches-sub">Commence par les leçons pour poser les bases (PJ, flagrance, GAV…), puis enchaîne avec les fiches et le QCM.</p>
+      <div class="learn-page-hero">
+        <h1 class="learn-fiches-title">Apprend<span class="learn-title-accent">re</span></h1>
+        <p class="learn-fiches-sub">Construis tes bases, approfondis à ton rythme — et passe l’examen serein.</p>
+      </div>
       <div class="section-grid" id="learn-grid"></div>
     </div>
   </div>
@@ -1549,7 +1568,7 @@ input{font:inherit;color:var(--txt);}
 <nav class="bnav">
   <button class="nb on" data-tab="dash" onclick="goTab('dash',this)" aria-label="Accueil"><span class="ni">🏠</span>Accueil</button>
   <button class="nb" data-tab="learn" onclick="goTab('learn',this)" aria-label="Apprendre"><span class="ni">📖</span>Apprendre</button>
-  <button class="nb" data-tab="train" onclick="goTab('train',this)" aria-label="S'entraîner"><span class="ni">🎯</span>Entraîner</button>
+  <button class="nb" data-tab="train" onclick="goTab('train',this)" aria-label="Entraînement"><span class="ni">🎯</span>Entraînement</button>
   <button class="nb" data-tab="prof" onclick="goTab('prof',this)" aria-label="Mon profil"><span class="ni">👤</span>Moi</button>
 </nav>
 
@@ -6528,42 +6547,39 @@ function backFromLeconsToLearn(){
 function renderLearnGrid(){
   var lessons=typeof LESSONS!=='undefined'?LESSONS:[];
   var done=Object.keys(S.lessonsDone).length,total=lessons.length,pct=total?Math.round(done/total*100):0;
-  var html='';
-  html+='<div class="section-bubble sb-hero" role="button" tabindex="0" onclick="openLeconsView()" onkeydown="if(event.key===\'Enter\')openLeconsView()">';
-  html+='<div class="sb-ico">📖</div>';
-  html+='<div class="sb-name">Leçons</div>';
-  html+='<div class="sb-sub">'+total+' chapitres · '+done+' complétée'+(done>1?'s':'')+' — cours + QCM pour valider</div>';
-  html+='<div class="sb-prog-wrap"><div class="sb-prog-fill" style="width:'+pct+'%;background:var(--or)"></div></div>';
-  html+='<span class="sb-cta">Voir les leçons →</span>';
-  html+='</div>';
-  var sections=[
-    {tab:'cadre',ico:'📋',name:'Cadre d\'enquête',subKey:'cadre'},
-    {tab:'infr',ico:'⚖️',name:'Infractions',subKey:'infr'},
-    {tab:'proc',ico:'📋',name:'Procédure',subKey:'proc'},
-    {tab:'oral',ico:'🎤',name:'Oral OPJ',subKey:'oral'},
-    {tab:'annales',ico:'📄',name:'Annales & sujets',subKey:'annales'},
-    {tab:'lexique',ico:'📖',name:'Lexique',subKey:'lexique'},
-    {tab:'schemas',ico:'📐',name:'Schémas récap',subKey:'schemas'},
-    {tab:'jourj',ico:'📋',name:'Jour J',subKey:'jourj'},
-    {tab:'cart',ico:'📌',name:'Cartouches',subKey:'cart'},
-    {tab:'cas',ico:'🧩',name:'Cas prat.',subKey:'cas'},
-    {tab:'cat',ico:'🚨',name:'CAT',subKey:'cat'},
-    {tab:'revisions',ico:'🔄',name:'Révisions',subKey:'revisions'}
+  function bubbleFich(tab,ico,name,sub,progPct,progCol){
+    return '<div class="section-bubble" role="button" tabindex="0" onclick="openFichFromLearn(\''+tab+'\')" onkeydown="if(event.key===\'Enter\')openFichFromLearn(\''+tab+'\')"><div class="sb-ico">'+ico+'</div><div class="sb-name">'+name+'</div><div class="sb-sub">'+sub+'</div><div class="sb-prog-wrap"><div class="sb-prog-fill" style="width:'+(progPct||0)+'%;background:'+(progCol||'var(--or)')+'"></div></div></div>';
+  }
+  function getSub(tab,count){
+    if(tab==='cadre')return (typeof CADRES!=='undefined'?CADRES:[]).length+' cadres';
+    if(tab==='revisions')return count?'À réviser : '+count:'Aucune révision due';
+    if(tab==='annales')return count+' sujets';
+    if(tab==='lexique')return count+' termes';
+    if(tab==='schemas')return '2 schémas';
+    if(tab==='jourj')return 'Checklist jour J';
+    return count+' fiches';
+  }
+  var html='<div class="learn-grid-inner">';
+  html+='<div class="learn-hero-wrap"><div class="section-bubble sb-hero" role="button" tabindex="0" onclick="openLeconsView()" onkeydown="if(event.key===\'Enter\')openLeconsView()"><div class="sb-ico">📖</div><div class="sb-name">Leçons</div><div class="sb-sub">'+total+' chapitres · '+done+' complétée'+(done>1?'s':'')+' — cours + QCM pour valider</div><div class="sb-prog-wrap"><div class="sb-prog-fill" style="width:'+pct+'%;background:var(--or)"></div></div><span class="sb-cta">Voir les leçons →</span></div></div>';
+  var groups=[
+    {title:'Fondamentaux',tabs:[{tab:'cadre',ico:'📋',name:'Cadre d\'enquête'},{tab:'infr',ico:'⚖️',name:'Infractions'},{tab:'proc',ico:'📋',name:'Procédure'}]},
+    {title:'Oral & fiches',tabs:[{tab:'oral',ico:'🎤',name:'Oral OPJ'},{tab:'lexique',ico:'📖',name:'Lexique'},{tab:'schemas',ico:'📐',name:'Schémas récap'}]},
+    {title:'Pratique',tabs:[{tab:'cart',ico:'📌',name:'Cartouches'},{tab:'cas',ico:'🧩',name:'Cas pratiques'},{tab:'cat',ico:'🚨',name:'CAT'}]},
+    {title:'Révisions & examen',tabs:[{tab:'revisions',ico:'🔄',name:'Révisions'},{tab:'annales',ico:'📄',name:'Annales & sujets'},{tab:'jourj',ico:'📋',name:'Jour J'}]}
   ];
   try{
-    sections.forEach(function(s){
-      var count=0,pct=0;
-      try{count=getFichSectionCount(s.tab);pct=getFichSectionProgress(s.tab);}catch(e){}
-      var sub=(s.tab==='cadre'?((typeof CADRES!=='undefined'?CADRES:[]).length+' cadres'):s.tab==='revisions'?(count?'À réviser : '+count:'Aucune révision due'):s.tab==='annales'?(count+' sujets disponibles'):s.tab==='lexique'?(count+' termes'):s.tab==='schemas'?('2 schémas'):s.tab==='jourj'?('Checklist jour J'):count+' fiches disponibles');
-      var col=s.tab==='revisions'?'var(--vert)':'var(--or)';
-      html+='<div class="section-bubble" role="button" tabindex="0" onclick="openFichFromLearn(\''+s.tab+'\')" onkeydown="if(event.key===\'Enter\')openFichFromLearn(\''+s.tab+'\')">';
-      html+='<div class="sb-ico">'+s.ico+'</div>';
-      html+='<div class="sb-name">'+s.name+'</div>';
-      html+='<div class="sb-sub">'+sub+'</div>';
-      html+='<div class="sb-prog-wrap"><div class="sb-prog-fill" style="width:'+pct+'%;background:'+col+'"></div></div>';
-      html+='</div>';
+    groups.forEach(function(gr){
+      html+='<div class="learn-group"><div class="learn-group-title"><span class="lg-dot"></span>'+gr.title+'</div><div class="learn-group-grid">';
+      gr.tabs.forEach(function(s){
+        var count=0,progPct=0;
+        try{count=getFichSectionCount(s.tab);progPct=getFichSectionProgress(s.tab);}catch(e){}
+        var sub=getSub(s.tab,count),col=s.tab==='revisions'?'var(--vert)':'var(--or)';
+        html+=bubbleFich(s.tab,s.ico,s.name,sub,progPct,col);
+      });
+      html+='</div></div>';
     });
   }catch(e){}
+  html+='</div>';
   var el=document.getElementById('learn-grid');
   if(el)el.innerHTML=html||'';
 }
