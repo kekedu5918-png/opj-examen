@@ -6893,6 +6893,8 @@ function renderFichCadre(){
 }
 const CMAP={'Atteintes à la vie':['Meurtre','Empoisonnement','Homicide involontaire'],'Violences':['Violences volontaires','Tortures et actes de barbarie','Violences habituelles au sein du couple','Violences involontaires (conducteur)'],'Risques':['Risque causé à autrui','Non-assistance à personne en péril','Non-obstacle à un crime'],'Sexuelles':['Viol','Agressions sexuelles','Harcèlement sexuel'],'Libertés':['Enlèvement et séquestration','Discriminations'],'Biens':['Vol','Extorsion','Escroquerie','Abus de confiance','Recel','Destructions, dégradations, détériorations (DDD)'],'Stupéfiants':['Usage illicite de stupéfiants','Transport et détention de stupéfiants','Trafic de stupéfiants'],'Routières':["Conduite sous l'alcool","Conduite en état alcoolique","Conduite après usage de stupéfiants","Délit de fuite","Refus d'obtempérer","Défaut de permis de conduire","Défaut d'assurance","Grand excès de vitesse"],'Ordre public':['Outrage','Rébellion','Faux et usage de faux','Association de malfaiteurs','Appels et messages malveillants','Participation à un groupement violent'],'Famille':['Abandon de famille','Non-représentation d\'enfant']};
 const CAT_NAV_ORDER=['Atteintes à la vie','Violences','Risques','Sexuelles','Libertés','Biens','Stupéfiants','Routières','Ordre public','Famille'];
+/** Ordre des catégories selon les Livres du Code pénal (II → V) */
+const CAT_ORDER_BY_LIVRE=['Atteintes à la vie','Violences','Risques','Sexuelles','Libertés','Biens','Ordre public','Stupéfiants','Routières','Famille'];
 const CICO={'Atteintes à la vie':'💀','Violences':'⚡','Risques':'🆘','Sexuelles':'🚫','Libertés':'🔒','Biens':'💰','Stupéfiants':'💊','Routières':'🚗','Ordre public':'⚖️','Famille':'👨‍👩‍👧'};
 const CCOL={'Atteintes à la vie':'#C62828','Violences':'#E65100','Risques':'#F57F17','Sexuelles':'#AD1457','Libertés':'#6A1B9A','Biens':'#1565C0','Stupéfiants':'#2E7D32','Routières':'#00695C','Ordre public':'#37474F','Famille':'#880E4F'};
 let infrViewState='categories', infrSelectedCategory=null, infrCurrentList=[], infrDetailIndex=0;
@@ -6963,6 +6965,15 @@ function navInfrDetail(delta){
 const LIVRE_ORDER=[1,2,3,4,5];
 const LIVRE_HEADERS={1:'LIVRE I — Dispositions générales',2:'LIVRE II — Crimes et délits contre les personnes (art. 221-1 à 227-29 CP)',3:'LIVRE III — Crimes et délits contre les biens (art. 311-1 à 324-8 CP)',4:'LIVRE IV — Crimes et délits contre la Nation (art. 410-1 à 462-10 CP)',5:'LIVRE V — Autres crimes et délits (art. 511-1 et s. CP)'};
 const LIVRE_BY_CAT={'Atteintes à la vie':2,'Violences':2,'Risques':2,'Sexuelles':2,'Libertés':2,'Biens':3,'Stupéfiants':5,'Routières':5,'Ordre public':4,'Famille':5,'Atteintes aux mineurs':2,'Association de malfaiteurs':4,'Infractions spécifiques':5,'Autres':5};
+/** Extrait la référence article + code (CP, CR, CSP…) pour une fiche infraction */
+function getInfrArticleCode(f){
+  var txt=(f.legal||'')+' '+(f.full||'');
+  var m=txt.match(/art\.\s*([\dR\-L][\dR\-\.\s]*?)(?:\s+al\.\s*[\d]+)?\s*(CP|CR|CSP|CPP)/i);
+  if(m)return{art:m[1].replace(/\s+/g,' ').trim(),code:m[2].toUpperCase()};
+  var m2=txt.match(/art\.\s*([\dR\-L][\dR\-\.\s]*)/i);
+  if(m2)return{art:m2[1].replace(/\s+/g,' ').trim(),code:'CP'};
+  return null;
+}
 /** Infractions souvent posées aux annales CNJ/OPJ */
 const FREQ_ANNALES_TITRES=['Meurtre','Assassinat','Violences volontaires','Violences habituelles au sein du couple','Viol','Agressions sexuelles','Vol','Extorsion','Escroquerie','Abus de confiance','Recel','Garde à vue','Perquisitions','Prescription'];
 
